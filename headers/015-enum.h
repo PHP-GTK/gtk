@@ -14,3 +14,10 @@ typedef enum {
     G_SIGNAL_MUST_COLLECT = 1 << 7,
     G_SIGNAL_DEPRECATED = 1 << 8
 } GSignalFlags;
+
+typedef enum {
+  GTK_POS_LEFT,
+  GTK_POS_RIGHT,
+  GTK_POS_TOP,
+  GTK_POS_BOTTOM
+} GtkPositionType;

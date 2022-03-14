@@ -42,13 +42,18 @@ class Window
 
     public function getDefaultSize(): array
     {
-        $width = Gtk::getFFI()->new("gint", FALSE);
-        $height = Gtk::getFFI()->new("gint", FALSE);
+        $width = Gtk::getFFI()->new("gint", false);
+        $height = Gtk::getFFI()->new("gint", false);
 
         Gtk::getFFI()->gtk_window_get_default_size(Gtk::getFFI()->cast("GtkWindow *", $this->window), \FFI::addr($width), \FFI::addr($height));
         return [
             'width' => $width->cdata,
             'height' => $height->cdata,
         ];
+    }
+
+    public function setChild(Widget $widget)
+    {
+        Gtk::getFFI()->gtk_window_set_child(Gtk::getFFI()->cast("GtkWindow*", $this->window), Gtk::getFFI()->cast("GtkWidget*", $widget->widget));
     }
 }

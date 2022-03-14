@@ -12,3 +12,4 @@ extern const char* gtk_window_get_title(GtkWindow* window);
 extern void gtk_window_close(GtkWindow* window);
 extern void gtk_window_destroy(GtkWindow* window);
 extern void gtk_window_set_default_size(GtkWindow* window, int width, int height);
+extern void gtk_window_set_child(GtkWindow* window, GtkWidget* child);

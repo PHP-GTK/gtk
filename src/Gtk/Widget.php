@@ -15,7 +15,7 @@ use FFI\CData;
 class Widget
 {
     public readonly GObject $GObject;
-    public function __construct(private readonly CData $widget)
+    public function __construct(public readonly CData $widget)
     {
         $this->GObject = new GObject($this->widget);
     }
