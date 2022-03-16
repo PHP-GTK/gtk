@@ -21,3 +21,8 @@ typedef enum {
   GTK_POS_TOP,
   GTK_POS_BOTTOM
 } GtkPositionType;
+
+typedef enum {
+  GTK_ORIENTATION_HORIZONTAL,
+  GTK_ORIENTATION_VERTICAL,
+} GtkOrientation;

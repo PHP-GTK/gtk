@@ -4,5 +4,6 @@ typedef struct _GtkWidget GtkWidget;
 typedef struct _GtkWindow GtkWindow;
 typedef struct _GObject GObject;
 typedef struct _GtkGrid GtkGrid;
+typedef struct _GtkBox GtkBox;
 typedef void (*GClosureNotify) (gpointer data, GClosure *closure);
 typedef void* (*GCallback) (void*, void*);
