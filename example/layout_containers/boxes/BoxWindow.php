@@ -11,13 +11,13 @@ class BoxWindow extends \PGtk\Gtk\Gtk\Window
         $box = new \PGtk\Gtk\Gtk\Box(0, 6);
         $button1 = new \PGtk\Gtk\Gtk\Button('Hello');
         $button1->widget->GObject->connect('clicked', $this->onButton1Clicked(...));
-        $box->append($button1->widget);
+        $box->append($button1);
 
         $button2 = new \PGtk\Gtk\Gtk\Button('Goodbye');
         $button2->widget->GObject->connect('clicked', $this->onButton2Clicked(...));
-        $box->append($button2->widget);
+        $box->append($button2);
 
-        $this->setChild($box->widget);
+        $this->setChild($box);
 
         $this->widget->GObject->connect('destroy', function () {
             $this->run = false;

@@ -9,57 +9,57 @@ class ListBoxWindow extends \PGtk\Gtk\Gtk\Window
         parent::__construct();
         $this->setTitle('List Box');
         $boxOuter = new \PGtk\Gtk\Gtk\Box(0, 6);
-        $this->setChild($boxOuter->widget);
+        $this->setChild($boxOuter);
 
         $listbox = new \PGtk\Gtk\Gtk\ListBox();
         $listbox->setSelectionMode(0);
-        $boxOuter->append($listbox->widget);
+        $boxOuter->append($listbox);
 
         $row = new \PGtk\Gtk\Gtk\ListBoxRow();
         $hbox = new \PGtk\Gtk\Gtk\Box(0, 50);
-        $row->setChild($hbox->widget);
+        $row->setChild($hbox);
         $vbox = new \PGtk\Gtk\Gtk\Box(1, 0);
-        $hbox->append($vbox->widget);
+        $hbox->append($vbox);
 
         $label1 = new \PGtk\Gtk\Gtk\Label("Automatic Date & Time");
         $label2 = new \PGtk\Gtk\Gtk\Label("Requires internet access");
-        $vbox->append($label1->widget);
-        $vbox->append($label2->widget);
+        $vbox->append($label1);
+        $vbox->append($label2);
 
         $switch = new \PGtk\Gtk\Gtk\Breaker();
 
-        $hbox->append($switch->widget);
-        $listbox->append($row->widget);
+        $hbox->append($switch);
+        $listbox->append($row);
 
         $row = new \PGtk\Gtk\Gtk\ListBoxRow();
         $hbox = new \PGtk\Gtk\Gtk\Box(0, 50);
-        $row->setChild($hbox->widget);
+        $row->setChild($hbox);
         $label = new \PGtk\Gtk\Gtk\Label("Enable Automatic Update");
         $check = new \PGtk\Gtk\Gtk\CheckButton();
-        $hbox->append($label->widget);
-        $hbox->append($check->widget);
-        $listbox->append($row->widget);
+        $hbox->append($label);
+        $hbox->append($check);
+        $listbox->append($row);
 
         $row = new \PGtk\Gtk\Gtk\ListBoxRow();
         $hbox = new \PGtk\Gtk\Gtk\Box(0, 50);
-        $row->setChild($hbox->widget);
+        $row->setChild($hbox);
         $label = new \PGtk\Gtk\Gtk\Label("Date Format");
         $combo = new \PGtk\Gtk\Gtk\ComboBoxText();
         $combo->insert(0, "0", "24-hour");
         $combo->insert(1, "1", "AM/PM");
-        $hbox->append($label->widget);
-        $hbox->append($combo->widget);
+        $hbox->append($label);
+        $hbox->append($combo);
 
-        $listbox->append($row->widget);
+        $listbox->append($row);
 
         $listbox2 = new \PGtk\Gtk\Gtk\ListBox();
         $items = explode(' ', "This is a sorted ListBox Fail");
 
         foreach ($items as $item) {
-            $listbox2->append((new ListBoxRowWithData($item))->widget);
+            $listbox2->append((new ListBoxRowWithData($item)));
         }
 
-        $boxOuter->append($listbox2->widget);
+        $boxOuter->append($listbox2);
         $this->widget->GObject->connect('destroy', function () {
             $this->run = false;
         });

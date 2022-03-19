@@ -6,6 +6,6 @@ class ListBoxRowWithData extends \PGtk\Gtk\Gtk\ListBoxRow
     {
         parent::__construct();
         $label = new \PGtk\Gtk\Gtk\Label($data);
-        $this->setChild($label->widget);
+        $this->setChild($label);
     }
 }

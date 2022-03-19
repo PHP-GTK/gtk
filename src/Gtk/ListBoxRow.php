@@ -5,19 +5,18 @@ namespace PGtk\Gtk\Gtk;
 use FFI\CData;
 use PGtk\Gtk\Gtk;
 
-class ListBoxRow
+class ListBoxRow extends AbstractWidget
 {
-    public readonly CData $listBoxRow;
-    public readonly Widget $widget;
+    protected string $prefFunctionName = 'gtk_list_box_row_';
+    protected string $cast = 'ListBoxRow';
 
     public function __construct()
     {
-        $this->listBoxRow = Gtk::getFFI()->gtk_list_box_row_new();
-        $this->widget = new Widget($this->listBoxRow);
+        parent::__construct(new Widget(Gtk::getFFI()->gtk_list_box_row_new()));
     }
 
-    public function setChild(Widget $widget)
+    public function setChild(WidgetInterface $widget)
     {
-        Gtk::getFFI()->gtk_list_box_row_set_child(Gtk::getFFI()->cast("GtkListBoxRow*", $this->listBoxRow), Gtk::getFFI()->cast("GtkWidget*", $widget->widget));
+        Gtk::getFFI()->gtk_list_box_row_set_child(Gtk::getFFI()->cast("GtkListBoxRow*", $this->widget->widget), Gtk::getFFI()->cast("GtkWidget*", $widget->getWidget()->widget));
     }
 }

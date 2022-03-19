@@ -5,14 +5,13 @@ namespace PGtk\Gtk\Gtk;
 use FFI\CData;
 use PGtk\Gtk\Gtk;
 
-class Label
+class Label extends AbstractWidget
 {
-    public readonly CData $label;
-    public readonly Widget $widget;
+    protected string $prefFunctionName = 'gtk_label_';
+    protected string $cast = 'GtkLabel';
 
     public function __construct(string $label)
     {
-        $this->label = Gtk::getFFI()->gtk_label_new($label);
-        $this->widget = new Widget($this->label);
+        parent::__construct(new Widget(Gtk::getFFI()->gtk_label_new($label)));
     }
 }

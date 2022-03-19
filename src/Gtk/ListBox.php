@@ -9,30 +9,21 @@ use PGtk\Gtk\Gtk;
  * @method setSelectionMode(int $mode): void
  *
  */
-class ListBox
+class ListBox extends AbstractWidget
 {
-    public readonly CData $listBox;
-    public readonly Widget $widget;
+    protected string $prefFunctionName = 'gtk_list_box_';
+    protected string $cast = 'GtkListBox';
 
     public function __construct()
     {
-        $this->listBox = Gtk::getFFI()->gtk_list_box_new();
-        $this->widget = new Widget($this->listBox);
+        parent::__construct(new Widget(Gtk::getFFI()->gtk_list_box_new()));
     }
 
-    public function __call(string $name, array $arguments)
-    {
-        $functionName = 'gtk_list_box_' . strtolower(preg_replace('~([A-Z])~', '_$1', $name));
-        $cast = "GtkListBox *";
-
-        return Gtk::getFFI()->$functionName(Gtk::getFFI()->cast($cast, $this->listBox), ...$arguments);
-    }
-
-    public function append(Widget $widget): void
+    public function append(WidgetInterface $widget): void
     {
         Gtk::getFFI()->gtk_list_box_append(
-            Gtk::getFFI()->cast('GtkListBox *', $this->listBox),
-            Gtk::getFFI()->cast('GtkWidget *', $widget->widget)
+            Gtk::getFFI()->cast($this->cast . ' *', $this->widget->widget),
+            Gtk::getFFI()->cast('GtkWidget *', $widget->getWidget()->widget)
         );
     }
 }

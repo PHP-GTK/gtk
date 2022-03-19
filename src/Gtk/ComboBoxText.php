@@ -8,22 +8,13 @@ use PGtk\Gtk\Gtk;
 /**
  * @method insert(int $position, string $id, string $text): void
  */
-class ComboBoxText
+class ComboBoxText extends AbstractWidget
 {
-    public readonly CData $comboBoxText;
-    public readonly Widget $widget;
+    protected string $prefFunctionName = 'gtk_combo_box_text_';
+    protected string $cast = 'GtkComboBoxText';
 
     public function __construct()
     {
-        $this->comboBoxText = Gtk::getFFI()->gtk_combo_box_text_new();
-        $this->widget = new Widget($this->comboBoxText);
-    }
-
-    public function __call(string $name, array $arguments)
-    {
-        $functionName = 'gtk_combo_box_text_' . strtolower(preg_replace('~([A-Z])~', '_$1', $name));
-        $cast = "GtkComboBoxText *";
-
-        return Gtk::getFFI()->$functionName(Gtk::getFFI()->cast($cast, $this->comboBoxText), ...$arguments);
+        parent::__construct(new Widget(Gtk::getFFI()->gtk_check_button_new()));
     }
 }

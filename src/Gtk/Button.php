@@ -5,18 +5,17 @@ namespace PGtk\Gtk\Gtk;
 use PGtk\Gtk\Gtk;
 use FFI\CData;
 
-class Button
+class Button extends AbstractWidget
 {
-    public readonly CData $button;
-    public readonly Widget $widget;
+    protected string $cast = 'GtkButton';
+    protected string $prefFunctionName = 'gtk_button_';
 
     public function __construct(string $label = null)
     {
         if ($label === null) {
-            $this->button = Gtk::getFFI()->gtk_button_new();
+            parent::__construct(new Widget(Gtk::getFFI()->gtk_button_new()));
         }else{
-            $this->button = Gtk::getFFI()->gtk_button_new_with_label($label);
+            parent::__construct(new Widget(Gtk::getFFI()->gtk_button_new_with_label($label)));
         }
-        $this->widget = new Widget($this->button);
     }
 }

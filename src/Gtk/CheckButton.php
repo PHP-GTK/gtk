@@ -5,14 +5,13 @@ namespace PGtk\Gtk\Gtk;
 use FFI\CData;
 use PGtk\Gtk\Gtk;
 
-class CheckButton
+class CheckButton extends AbstractWidget
 {
-    public readonly CData $checkButton;
-    public readonly Widget $widget;
+    protected string $prefFunctionName = 'gtk_check_button_';
+    protected string $cast = 'GtkCheckButton';
 
     public function __construct()
     {
-        $this->checkButton = Gtk::getFFI()->gtk_check_button_new();
-        $this->widget = new Widget($this->checkButton);
+        parent::__construct(new Widget(Gtk::getFFI()->gtk_check_button_new()));
     }
 }

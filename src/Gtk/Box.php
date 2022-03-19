@@ -5,22 +5,21 @@ namespace PGtk\Gtk\Gtk;
 use FFI\CData;
 use PGtk\Gtk\Gtk;
 
-class Box
+class Box extends AbstractWidget
 {
-    public readonly CData $box;
-    public readonly Widget $widget;
+    protected string $prefFunctionName = 'gtk_box_';
+    protected string $cast = 'GtkBox';
 
     public function __construct(int $orientation, int $spacing)
     {
-        $this->box = Gtk::getFFI()->gtk_box_new($orientation, $spacing);
-        $this->widget = new Widget($this->box);
+        parent::__construct(new Widget(Gtk::getFFI()->gtk_box_new($orientation, $spacing)));
     }
 
-    public function append(Widget $widget): void
+    public function append(WidgetInterface $widget): void
     {
         Gtk::getFFI()->gtk_box_append(
-            Gtk::getFFI()->cast('GtkBox *', $this->box),
-            Gtk::getFFI()->cast('GtkWidget *', $widget->widget)
+            Gtk::getFFI()->cast($this->cast . ' *', $this->widget->widget),
+            Gtk::getFFI()->cast('GtkWidget *', $widget->getWidget()->widget)
         );
     }
 }

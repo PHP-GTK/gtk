@@ -18,11 +18,11 @@ class GridWindow extends \PGtk\Gtk\Gtk\Window
         $grid = new \PGtk\Gtk\Gtk\Grid();
         $grid->attach($button1->widget, 0, 0, 1, 1);
         $grid->attach($button2->widget, 1, 0, 2, 1);
-        $grid->attachNextTo($button3->widget, $button1->widget, 3, 1, 2);
-        $grid->attachNextTo($button4->widget, $button3->widget, 1,  2, 1);
+        $grid->attachNextTo($button3, $button1, 3, 1, 2);
+        $grid->attachNextTo($button4, $button3, 1,  2, 1);
         $grid->attach($button5->widget,   1, 2, 1, 1);
-        $grid->attachNextTo($button6->widget, $button5->widget, 1, 1, 1);
-        $this->setChild($grid->widget);
+        $grid->attachNextTo($button6, $button5, 1, 1, 1);
+        $this->setChild($grid);
     }
 }
 

@@ -21,23 +21,15 @@ use FFI\CData;
  * @method destroy(): void
  *
  */
-class Window
+class Window extends AbstractWidget
 {
-    public readonly CData $window;
     public readonly Widget $widget;
+    protected string $cast = 'GtkWindow';
+    protected string $prefFunctionName = 'gtk_window_';
 
     public function __construct()
     {
-        $this->window = Gtk::getFFI()->gtk_window_new();
-        $this->widget = new Widget($this->window);
-    }
-
-    public function __call(string $name, array $arguments)
-    {
-        $functionName = 'gtk_window_' . strtolower(preg_replace('~([A-Z])~', '_$1', $name));
-        $cast = "GtkWindow *";
-
-        return Gtk::getFFI()->$functionName(Gtk::getFFI()->cast($cast, $this->window), ...$arguments);
+        $this->widget = new Widget(Gtk::getFFI()->gtk_window_new());
     }
 
     public function getDefaultSize(): array
@@ -45,15 +37,15 @@ class Window
         $width = Gtk::getFFI()->new("gint", false);
         $height = Gtk::getFFI()->new("gint", false);
 
-        Gtk::getFFI()->gtk_window_get_default_size(Gtk::getFFI()->cast("GtkWindow *", $this->window), \FFI::addr($width), \FFI::addr($height));
+        Gtk::getFFI()->gtk_window_get_default_size(Gtk::getFFI()->cast($this->cast . ' *', $this->widget->widget), \FFI::addr($width), \FFI::addr($height));
         return [
             'width' => $width->cdata,
             'height' => $height->cdata,
         ];
     }
 
-    public function setChild(Widget $widget)
+    public function setChild(WidgetInterface $widget)
     {
-        Gtk::getFFI()->gtk_window_set_child(Gtk::getFFI()->cast("GtkWindow*", $this->window), Gtk::getFFI()->cast("GtkWidget*", $widget->widget));
+        Gtk::getFFI()->gtk_window_set_child(Gtk::getFFI()->cast($this->cast . ' *', $this->widget->widget), Gtk::getFFI()->cast("GtkWidget*", $widget->getWidget()->widget));
     }
 }

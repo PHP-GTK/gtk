@@ -5,14 +5,13 @@ namespace PGtk\Gtk\Gtk;
 use PGtk\Gtk\Gtk;
 use FFI\CData;
 
-class Breaker
+class Breaker extends AbstractWidget
 {
-    public readonly CData $switch;
-    public readonly Widget $widget;
+    protected string $cast = 'GtkSwitch';
+    protected string $prefFunctionName = 'gtk_switch_';
 
     public function __construct()
     {
-        $this->switch = Gtk::getFFI()->gtk_switch_new();
-        $this->widget = new Widget($this->switch);
+        parent::__construct(new Widget(Gtk::getFFI()->gtk_switch_new()));
     }
 }
