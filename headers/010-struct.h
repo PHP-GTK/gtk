@@ -5,5 +5,8 @@ typedef struct _GtkWindow GtkWindow;
 typedef struct _GObject GObject;
 typedef struct _GtkGrid GtkGrid;
 typedef struct _GtkBox GtkBox;
+typedef struct _GtkComboBoxText GtkComboBoxText;
+typedef struct _GtkListBox GtkListBox;
+typedef struct _GtkListBoxRow GtkListBoxRow;
 typedef void (*GClosureNotify) (gpointer data, GClosure *closure);
 typedef void* (*GCallback) (void*, void*);

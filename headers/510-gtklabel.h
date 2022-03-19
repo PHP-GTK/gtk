@@ -1,0 +1,1 @@
+extern GtkWidget* gtk_label_new(const char* str);
