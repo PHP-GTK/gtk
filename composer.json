@@ -1,5 +1,6 @@
 {
     "name": "pgtk/gtk",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "PGtk\\Gtk\\": "src/",
