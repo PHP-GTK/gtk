@@ -15,6 +15,6 @@ class ComboBoxText extends AbstractWidget
 
     public function __construct()
     {
-        parent::__construct(new Widget(Gtk::getFFI()->gtk_check_button_new()));
+        parent::__construct(new Widget(Gtk::getFFI()->gtk_combo_box_text_new()));
     }
 }

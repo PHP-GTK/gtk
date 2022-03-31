@@ -38,6 +38,5 @@ class WindowTest extends TestCase
         );
 
         $win->destroy();
-        $win->close();
     }
 }

@@ -8,7 +8,7 @@ class BoxWindow extends \PGtk\Gtk\Gtk\Window
     {
         parent::__construct();
         $this->setTitle('Box Example');
-        $box = new \PGtk\Gtk\Gtk\Box(0, 6);
+        $box = new \PGtk\Gtk\Gtk\Box(\PGtk\Gtk\Gtk\Enum\Orientation::horizontal, 6);
         $button1 = new \PGtk\Gtk\Gtk\Button('Hello');
         $button1->widget->GObject->connect('clicked', $this->onButton1Clicked(...));
         $box->append($button1);

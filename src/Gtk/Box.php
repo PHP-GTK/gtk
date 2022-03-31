@@ -10,9 +10,9 @@ class Box extends AbstractWidget
     protected string $prefFunctionName = 'gtk_box_';
     protected string $cast = 'GtkBox';
 
-    public function __construct(int $orientation, int $spacing)
+    public function __construct(Gtk\Enum\Orientation $orientation, int $spacing)
     {
-        parent::__construct(new Widget(Gtk::getFFI()->gtk_box_new($orientation, $spacing)));
+        parent::__construct(new Widget(Gtk::getFFI()->gtk_box_new($orientation->value, $spacing)));
     }
 
     public function append(WidgetInterface $widget): void

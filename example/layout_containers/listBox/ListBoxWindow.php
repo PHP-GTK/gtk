@@ -8,7 +8,7 @@ class ListBoxWindow extends \PGtk\Gtk\Gtk\Window
     {
         parent::__construct();
         $this->setTitle('List Box');
-        $boxOuter = new \PGtk\Gtk\Gtk\Box(0, 6);
+        $boxOuter = new \PGtk\Gtk\Gtk\Box(\PGtk\Gtk\Gtk\Enum\Orientation::vertical, 6);
         $this->setChild($boxOuter);
 
         $listbox = new \PGtk\Gtk\Gtk\ListBox();
@@ -16,9 +16,9 @@ class ListBoxWindow extends \PGtk\Gtk\Gtk\Window
         $boxOuter->append($listbox);
 
         $row = new \PGtk\Gtk\Gtk\ListBoxRow();
-        $hbox = new \PGtk\Gtk\Gtk\Box(0, 50);
+        $hbox = new \PGtk\Gtk\Gtk\Box(\PGtk\Gtk\Gtk\Enum\Orientation::horizontal, 50);
         $row->setChild($hbox);
-        $vbox = new \PGtk\Gtk\Gtk\Box(1, 0);
+        $vbox = new \PGtk\Gtk\Gtk\Box(\PGtk\Gtk\Gtk\Enum\Orientation::vertical, 0);
         $hbox->append($vbox);
 
         $label1 = new \PGtk\Gtk\Gtk\Label("Automatic Date & Time");
@@ -32,7 +32,7 @@ class ListBoxWindow extends \PGtk\Gtk\Gtk\Window
         $listbox->append($row);
 
         $row = new \PGtk\Gtk\Gtk\ListBoxRow();
-        $hbox = new \PGtk\Gtk\Gtk\Box(0, 50);
+        $hbox = new \PGtk\Gtk\Gtk\Box(\PGtk\Gtk\Gtk\Enum\Orientation::horizontal, 50);
         $row->setChild($hbox);
         $label = new \PGtk\Gtk\Gtk\Label("Enable Automatic Update");
         $check = new \PGtk\Gtk\Gtk\CheckButton();
@@ -41,7 +41,7 @@ class ListBoxWindow extends \PGtk\Gtk\Gtk\Window
         $listbox->append($row);
 
         $row = new \PGtk\Gtk\Gtk\ListBoxRow();
-        $hbox = new \PGtk\Gtk\Gtk\Box(0, 50);
+        $hbox = new \PGtk\Gtk\Gtk\Box(\PGtk\Gtk\Gtk\Enum\Orientation::horizontal, 50);
         $row->setChild($hbox);
         $label = new \PGtk\Gtk\Gtk\Label("Date Format");
         $combo = new \PGtk\Gtk\Gtk\ComboBoxText();
