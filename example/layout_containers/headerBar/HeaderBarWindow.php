@@ -1,0 +1,39 @@
+<?php
+
+class HeaderBarWindow extends \PGtk\Gtk\Gtk\Window
+{
+    private bool $run = true;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->setTitle('HeaderBar Demo');
+        $this->setDefaultSize(400, 200);
+
+        $hb = new \PGtk\Gtk\Gtk\HeaderBar();
+        $this->setTitlebar($hb);
+
+        $button = new \PGtk\Gtk\Gtk\Button();
+        $button->setIconName('mail-send-receive-symbolic');
+        $hb->packEnd($button);
+
+        $box = new \PGtk\Gtk\Gtk\Box(\PGtk\Gtk\Gtk\Enum\Orientation::horizontal, 0);
+        $button = new \PGtk\Gtk\Gtk\ButtonIcon('pan-start-symbolic');
+        $box->append($button);
+        $button = new \PGtk\Gtk\Gtk\ButtonIcon('pan-end-symbolic');
+        $box->append($button);
+        $hb->packStart($box);
+
+        $this->widget->GObject->connect('destroy', function () {
+            $this->run = false;
+        });
+    }
+
+    public function run()
+    {
+        $this->widget->show();
+        while ($this->run) {
+            $this->widget->GObject->mainContextIteration(null, true);
+        }
+    }
+}

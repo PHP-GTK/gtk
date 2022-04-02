@@ -48,4 +48,11 @@ class Window extends AbstractWidget
     {
         Gtk::getFFI()->gtk_window_set_child(Gtk::getFFI()->cast($this->cast . ' *', $this->widget->widget), Gtk::getFFI()->cast("GtkWidget*", $widget->getWidget()->widget));
     }
+
+    public function setTitlebar(WidgetInterface $widget)
+    {
+        Gtk::getFFI()->gtk_window_set_titlebar(
+            Gtk::getFFI()->cast($this->cast . ' *', $this->widget->widget),
+            Gtk::getFFI()->cast("GtkWidget*", $widget->getWidget()->widget));
+    }
 }
