@@ -14,5 +14,7 @@ typedef struct _GtkStackSwitcher GtkStackSwitcher;
 typedef struct _GtkStackPage GtkStackPage;
 typedef struct _GtkHeaderBar GtkHeaderBar;
 typedef struct _GtkButton GtkButton;
+typedef struct _GtkScrolledWindow GtkScrolledWindow;
+typedef struct _GtkFlowBox GtkFlowBox;
 typedef void (*GClosureNotify) (gpointer data, GClosure *closure);
 typedef void* (*GCallback) (void*, void*);
