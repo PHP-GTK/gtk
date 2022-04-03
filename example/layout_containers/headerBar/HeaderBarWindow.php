@@ -11,6 +11,8 @@ class HeaderBarWindow extends \PGtk\Gtk\Gtk\Window
         $this->setDefaultSize(400, 200);
 
         $hb = new \PGtk\Gtk\Gtk\HeaderBar();
+        $hb->setDecorationLayout('menu:close');
+//        $hb->setDecorationLayout('menu:minimize,maximize,close');
         $this->setTitlebar($hb);
 
         $button = new \PGtk\Gtk\Gtk\Button();
