@@ -4,6 +4,8 @@ class HeaderBarWindow extends \PGtk\Gtk\Gtk\Window
 {
     private bool $run = true;
 
+    private $i = 0;
+
     public function __construct()
     {
         parent::__construct();
