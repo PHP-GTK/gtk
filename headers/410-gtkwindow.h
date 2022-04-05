@@ -14,3 +14,4 @@ extern void gtk_window_destroy(GtkWindow* window);
 extern void gtk_window_set_default_size(GtkWindow* window, int width, int height);
 extern void gtk_window_set_child(GtkWindow* window, GtkWidget* child);
 extern void gtk_window_set_titlebar(GtkWindow* window, GtkWidget* titlebar);
+extern void gtk_window_set_icon_name(GtkWindow* window, const char* name);
