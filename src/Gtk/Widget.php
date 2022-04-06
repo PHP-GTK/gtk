@@ -9,8 +9,13 @@ use FFI\CData;
 /**
  * GtkWidget is the base class all widgets in GTK+ derive from. It manages the widget lifecycle, states and style.
  *
- * @method setSizeRequest(int $width, int $height): void
- * @method show(): void
+ * @method setSizeRequest(int $width, int $height): void;
+ * @method show(): void;
+ * @method setMarginTop(int): void;
+ * @method setMarginBottom(int): void;
+ * @method setMarginEnd(int): void;
+ * @method setMarginStart(int): void;
+ * @method setTooltipText(string): void;
  */
 class Widget
 {
