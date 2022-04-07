@@ -2,6 +2,9 @@
     "name": "pgtk/gtk",
     "license": "MIT",
     "autoload": {
+        "files": [
+            "./src/GLib/functions.php"
+        ],
         "psr-4": {
             "PGtk\\Gtk\\": "src/",
             "Test\\PGtk\\Gtk\\": "tests/"

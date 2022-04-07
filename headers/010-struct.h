@@ -18,3 +18,4 @@ typedef struct _GtkScrolledWindow GtkScrolledWindow;
 typedef struct _GtkFlowBox GtkFlowBox;
 typedef void (*GClosureNotify) (gpointer data, GClosure *closure);
 typedef void* (*GCallback) (void*, void*);
+typedef gboolean (*GSourceFunc) (gpointer user_data);

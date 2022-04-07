@@ -1,0 +1,1 @@
+extern guint g_timeout_add_seconds (guint interval,GSourceFunc function,gpointer data);
