@@ -5,3 +5,6 @@ extern void gtk_widget_set_margin_bottom(GtkWidget* widget, int margin);
 extern void gtk_widget_set_margin_end(GtkWidget* widget, int margin);
 extern void gtk_widget_set_margin_start(GtkWidget* widget, int margin);
 extern void gtk_widget_set_tooltip_text(GtkWidget* widget, const char* text);
+extern void gtk_widget_set_can_focus(GtkWidget* widget, gboolean can_focus);
+extern void gtk_widget_set_sensitive(GtkWidget* widget, gboolean sensitive);
+extern GtkStyleContext* gtk_widget_get_style_context(GtkWidget* widget);
