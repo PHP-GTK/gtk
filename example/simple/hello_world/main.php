@@ -17,7 +17,7 @@ $w->widget->GObject->connect('destroy', function () use (&$run) {
     $run = false;
 });
 while ($run) {
-    $w->widget->GObject->mainContextIteration(null, true);
+    \PGtk\Gtk\GLib\MainContext::iteration(true);
 }
 
 

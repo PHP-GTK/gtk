@@ -37,7 +37,7 @@ class HeaderBarWindow extends \PGtk\Gtk\Gtk\Window
     {
         $this->widget->show();
         while ($this->run) {
-            $this->widget->GObject->mainContextIteration(null, true);
+            \PGtk\Gtk\GLib\MainContext::iteration(true);
         }
     }
 }

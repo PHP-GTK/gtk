@@ -19,6 +19,7 @@ use PGtk\Gtk\Gtk;
 use PGtk\Gtk\Gtk\Window;
 use PGtk\Gtk\Gtk\HeaderBar;
 use PGtk\Gtk\Gtk\Label;
+use PGtk\Gtk\GLib\MainContext;
 
 Gtk::getInstance(__DIR__ . '/libs/_build/gtk/libgtk-4.so');
 
@@ -36,11 +37,11 @@ $label = new Label('label');
 $window->setChild($label);
 
 $window->widget->GObject->connect('destroy', function () use (&$run) {
-$run = false;
+    $run = false;
 });
 $window->widget->show();
 
 while ($run) {
-$window->widget->GObject->mainContextIteration(null, true);
+    MainContext::iteration(true);
 }
 ```

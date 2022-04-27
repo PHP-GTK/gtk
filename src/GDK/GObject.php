@@ -5,9 +5,6 @@ namespace PGtk\Gtk\GDK;
 use PGtk\Gtk\Gtk;
 use FFI\CData;
 
-/**
- * @method mainContextIteration(): bool
- */
 class GObject
 {
     public function __construct(private readonly CData $GObject)

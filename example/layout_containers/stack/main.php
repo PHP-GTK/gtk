@@ -8,5 +8,5 @@ require_once __DIR__ . '/StackWindow.php';
 $w = new StackWindow();
 $w->widget->show();
 while (true) {
-    $w->widget->GObject->mainContextIteration(null, true);
+    \PGtk\Gtk\GLib\MainContext::iteration(true);
 }

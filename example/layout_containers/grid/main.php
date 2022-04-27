@@ -30,5 +30,5 @@ $w = new GridWindow();
 
 $w->widget->show();
 while (true) {
-    $w->widget->GObject->mainContextIteration(null, true);
+    \PGtk\Gtk\GLib\MainContext::iteration(true);
 }
