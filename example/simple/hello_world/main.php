@@ -2,8 +2,6 @@
 
 require __DIR__ . '/../../../vendor/autoload.php';
 
-\PGtk\Gtk\Gtk::getInstance(__DIR__ . '/../../../libs/_build/gtk/libgtk-4.so');
-
 $w = new \PGtk\Gtk\Gtk\Window();
 
 $w->setDefaultSize(600, 600);
