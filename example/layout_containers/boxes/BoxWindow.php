@@ -10,16 +10,16 @@ class BoxWindow extends \PGtk\Gtk\Gtk\Window
         $this->setTitle('Box Example');
         $box = new \PGtk\Gtk\Gtk\Box(\PGtk\Gtk\Gtk\Enum\Orientation::horizontal, 6);
         $button1 = new \PGtk\Gtk\Gtk\Button('Hello');
-        $button1->widget->GObject->connect('clicked', $this->onButton1Clicked(...));
+        $button1->connect('clicked', $this->onButton1Clicked(...));
         $box->append($button1);
 
         $button2 = new \PGtk\Gtk\Gtk\Button('Goodbye');
-        $button2->widget->GObject->connect('clicked', $this->onButton2Clicked(...));
+        $button2->connect('clicked', $this->onButton2Clicked(...));
         $box->append($button2);
 
         $this->setChild($box);
 
-        $this->widget->GObject->connect('destroy', function () {
+        $this->connect('destroy', function () {
             $this->run = false;
         });
     }

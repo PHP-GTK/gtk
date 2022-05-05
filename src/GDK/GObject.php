@@ -17,18 +17,4 @@ class GObject
 
         return Gtk::getFFI()->$functionName(...$arguments);
     }
-
-    public function connect(
-        string $detailed_signal,
-        callable $c_handler
-    ): int {
-        return (int) Gtk::getFFI()->g_signal_connect_data(
-            Gtk::getFFI()->cast('GObject*', $this->GObject),
-            $detailed_signal,
-            $c_handler,
-            null,
-            null,
-            null
-        );
-    }
 }

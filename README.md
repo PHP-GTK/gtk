@@ -34,7 +34,7 @@ $label = new Label('label');
 
 $window->setChild($label);
 
-$window->widget->GObject->connect('destroy', function () use (&$run) {
+$window->connect('destroy', function () use (&$run) {
     $run = false;
 });
 $window->widget->show();

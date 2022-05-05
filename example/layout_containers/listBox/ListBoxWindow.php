@@ -60,7 +60,7 @@ class ListBoxWindow extends \PGtk\Gtk\Gtk\Window
         }
 
         $boxOuter->append($listbox2);
-        $this->widget->GObject->connect('destroy', function () {
+        $this->connect('destroy', function () {
             $this->run = false;
         });
     }

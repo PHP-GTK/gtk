@@ -25,4 +25,21 @@ abstract class AbstractWidget implements WidgetInterface
     {
         return $this->widget;
     }
+
+    public function connect(
+        string $detailedSignal,
+        callable $handler,
+        ...$data
+    ) {
+        return (int) Gtk::getFFI()->g_signal_connect_data(
+            Gtk::getFFI()->cast('GObject*', $this->getWidget()->widget),
+            $detailedSignal,
+            function () use ($handler, $data) {
+                $handler($this, ...$data);
+            },
+            null,
+            null,
+            null
+        );
+    }
 }

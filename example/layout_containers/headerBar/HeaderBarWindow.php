@@ -28,7 +28,7 @@ class HeaderBarWindow extends \PGtk\Gtk\Gtk\Window
         $box->append($button);
         $hb->packStart($box);
 
-        $this->widget->GObject->connect('destroy', function () {
+        $this->connect('destroy',function () {
             $this->run = false;
         });
     }
