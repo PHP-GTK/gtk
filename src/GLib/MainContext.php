@@ -5,7 +5,7 @@ namespace PGtk\Gtk\GLib;
 use PGtk\Gtk\Gtk;
 
 /**
- * @method iteration(bool): boll
+ * @method static iteration(bool $mayBlock): bool
  */
 class MainContext
 {
