@@ -43,3 +43,20 @@ while ($run) {
     MainContext::iteration(true);
 }
 ```
+
+# Supported platforms and features
+
+## Platforms
+
+| Platform | Status |
+|----------|:------:|
+| Linux    | ✅      |
+| Windows  | ❌      |
+
+# Examples:
+- [TomatoGtk](https://github.com/kmaestro/tomate-gtk)
+
+Contributing
+------------
+
+Feel free to open issues and make PR. Contributions are welcome.
