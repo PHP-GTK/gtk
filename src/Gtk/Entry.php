@@ -9,26 +9,35 @@ use PGtk\Gtk\Gtk;
 class Entry extends AbstractWidget
 {
     protected string $prefFunctionName = 'gtk_entry_';
-    protected string $cast             = 'GtkEntry';
-    private          $buffer;
+    protected string $cast = 'GtkEntry';
 
-    public function __construct()
+    public function __construct(
+        protected ?EntryBuffer $buffer = null
+    )
     {
-        $entry        = Gtk::getFFI()
-                           ->gtk_entry_new();
-        $this->buffer = Gtk::getFFI()
-                           ->gtk_entry_get_buffer($entry);
-
+        if ($this->buffer === null) {
+            $entry = Gtk::getFFI()->gtk_entry_new();
+        } else {
+            $entry = Gtk::getFFI()->gtk_entry_new_with_buffer(
+                Gtk::getFFI()->cast("GtkEntryBuffer*", $this->buffer->getWidget()->widget)
+            );
+        }
         parent::__construct(new Widget($entry));
     }
 
-    /**
-     * Returns current text from buffer
-     */
-    public function getText(): string
+    public function setBuffer(EntryBuffer $buffer)
     {
-        return Gtk::getFFI()
-                  ->gtk_entry_buffer_get_text($this->buffer);
+        Gtk::getFFI()->gtk_entry_set_buffer(
+            Gtk::getFFI()->cast($this->cast . ' *', $this->widget->widget),
+            Gtk::getFFI()->cast("GtkEntryBuffer*", $buffer->getWidget()->widget)
+        );
+
+        $this->buffer = $buffer;
+    }
+
+    public function getBuffer(): EntryBuffer
+    {
+        return $this->buffer;
     }
 }
 
