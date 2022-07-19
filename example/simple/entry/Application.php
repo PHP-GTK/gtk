@@ -22,7 +22,9 @@ class Application
     public function __construct()
     {
         $this->name = new EntryBuffer('name');
+        $this->name->setMaxLength(8);
         $this->password = new PasswordEntryBuffer();
+        $this->password->setMaxLength(8);
     }
 
     public function run(): void
@@ -62,8 +64,7 @@ class Application
 
     public function onButtonClickedName(): void
     {
-        echo 'name: ' . $this->name->getText() . PHP_EOL;
-        $this->name->deleteText(0, strlen($this->name->getText()));
+        echo 'name: ' . $this->name->getText() . ', size: ' . $this->name->getLength() . ", bite: " . $this->name->getBytes() . PHP_EOL;
     }
 
     public function onButtonClickedPassword(): void

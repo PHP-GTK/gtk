@@ -1,4 +1,5 @@
 typedef char gchar;
+typedef int gsize;
 typedef int gint;
 typedef int guint;
 typedef bool gboolean;
