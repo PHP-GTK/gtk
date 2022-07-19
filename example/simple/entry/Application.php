@@ -63,6 +63,7 @@ class Application
     public function onButtonClickedName(): void
     {
         echo 'name: ' . $this->name->getText() . PHP_EOL;
+        $this->name->deleteText(0, strlen($this->name->getText()));
     }
 
     public function onButtonClickedPassword(): void

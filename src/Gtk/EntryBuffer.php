@@ -4,6 +4,10 @@ namespace PGtk\Gtk\Gtk;
 
 use PGtk\Gtk\Gtk;
 
+/**
+ * @method getText(): string
+ * @method deleteText(int $position, int $numChars): int
+ */
 class EntryBuffer extends AbstractWidget
 {
     protected string $prefFunctionName = 'gtk_entry_buffer_';
