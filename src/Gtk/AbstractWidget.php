@@ -15,6 +15,10 @@ abstract class AbstractWidget implements WidgetInterface
 
     public function __call(string $name, array $arguments)
     {
+        $comment = (new \ReflectionClass($this))->getDocComment();
+        if (!preg_match('~'.$name.'~', $comment)) {
+            throw new \RuntimeException('Method not found ' . $name . ' in ' . $this::class);
+        }
         $functionName = $this->prefFunctionName . strtolower(preg_replace('~([A-Z])~', '_$1', $name));
         $cast = $this->cast . ' *';
 
