@@ -2,7 +2,6 @@
 
 namespace PGtk\Gtk\Gtk;
 
-use http\Exception\RuntimeException;
 use PGtk\Gtk\Gtk;
 
 abstract class AbstractWidget implements WidgetInterface
