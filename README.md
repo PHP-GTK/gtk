@@ -15,15 +15,15 @@ composer require pgtk/gtk
 ```php
 require_once __DIR__ . '/vendor/autoload.php';
 
-use PGtk\Gtk\Gtk;
 use PGtk\Gtk\Gtk\Window;
 use PGtk\Gtk\Gtk\HeaderBar;
 use PGtk\Gtk\Gtk\Label;
-use PGtk\Gtk\GLib\MainContext;
+use PGtk\Gtk\GLib\MainLoop;
 
 $run = true;
 
 $window = new Window();
+$window->widget->setSizeRequest(100, 100);
 $window->setTitle('Window');
 
 $headerBar = new HeaderBar();
@@ -34,14 +34,16 @@ $label = new Label('label');
 
 $window->setChild($label);
 
-$window->connect('destroy', function () use (&$run) {
-    $run = false;
-});
+$loop = new MainLoop();
+$window->connect('destroy', function (Window $window, MainLoop $loop) {
+    $loop->quit();
+}, $loop);
+
 $window->widget->show();
 
-while ($run) {
-    MainContext::iteration(true);
-}
+$loop->run();
+
+
 ```
 
 # Supported platforms and features
