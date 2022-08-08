@@ -1,0 +1,12 @@
+extern GtkWidget* gtk_check_button_new ( void );
+extern GtkWidget* gtk_check_button_new_with_label ( const char* label );
+extern GtkWidget* gtk_check_button_new_with_mnemonic ( const char* label );
+extern gboolean gtk_check_button_get_active ( GtkCheckButton* self );
+extern gboolean gtk_check_button_get_inconsistent ( GtkCheckButton* check_button );
+extern const char* gtk_check_button_get_label ( GtkCheckButton* self );
+extern gboolean gtk_check_button_get_use_underline ( GtkCheckButton* self );
+extern void gtk_check_button_set_active ( GtkCheckButton* self, gboolean setting );
+extern void gtk_check_button_set_group ( GtkCheckButton* self, GtkCheckButton* group );
+extern void gtk_check_button_set_inconsistent ( GtkCheckButton* check_button, gboolean inconsistent );
+extern void gtk_check_button_set_label ( GtkCheckButton* self, const char* label );
+extern void gtk_check_button_set_use_underline ( GtkCheckButton* self, gboolean setting );
