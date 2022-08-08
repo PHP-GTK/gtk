@@ -51,11 +51,25 @@ typedef struct _GtkShortcut GtkShortcut;
 typedef struct _GVariantType GVariantType;
 typedef struct _GBytes GBytes;
 typedef struct _GtkBuilderScope GtkBuilderScope;
+typedef struct _GdkMonitor GdkMonitor;
+typedef struct _GtkApplication GtkApplication;
+typedef struct _GtkWindowGroup GtkWindowGroup;
+typedef struct _GtkCheckButton GtkCheckButton;
+typedef struct _GtkColorButton GtkColorButton;
+typedef struct _GtkFontButton GtkFontButton;
+typedef struct _GtkGtkLinkButton GtkLinkButton;
 typedef struct _GList GList;
+typedef struct _GdkRGBA GdkRGBA;
 struct _GList {
   gpointer data;
   GList* next;
   GList* prev;
+};
+struct _GdkRGBA {
+  gdouble red;
+  gdouble green;
+  gdouble blue;
+  gdouble alpha;
 };
 typedef gsize GType;
 typedef void (*GClosureNotify) (gpointer data, GClosure *closure);
