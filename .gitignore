@@ -3,3 +3,5 @@ test.php
 composer.lock
 .phpunit.result.cache
 .idea
+parser.php
+simple_html_dom.php
