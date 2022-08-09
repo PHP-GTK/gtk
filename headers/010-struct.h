@@ -60,6 +60,10 @@ typedef struct _GtkFontButton GtkFontButton;
 typedef struct _GtkGtkLinkButton GtkLinkButton;
 typedef struct _GtkAdjustment GtkAdjustment;
 typedef struct _GtkSwitch GtkSwitch;
+typedef struct _GtkTextMark GtkTextMark;
+typedef struct _GtkTextIter GtkTextIter;
+typedef struct _GtkTextTag GtkTextTag;
+typedef struct _GtkTextChildAnchor GtkTextChildAnchor;
 typedef struct _graphene_rect_t graphene_rect_t;
 typedef struct _GIcon GIcon;
 typedef struct _GdkContentProvider GdkContentProvider;
@@ -74,6 +78,7 @@ typedef struct _GtkEntryCompletion GtkEntryCompletion;
 typedef struct _GtkNaturalWrapMode GtkNaturalWrapMode;
 typedef struct _GMenuModel GMenuModel;
 typedef struct _PangoAttrList PangoAttrList;
+typedef struct _GtkFlowBoxChild GtkFlowBoxChild;
 typedef struct _GList GList;
 typedef struct _GdkRGBA GdkRGBA;
 struct _GList {
@@ -100,3 +105,8 @@ typedef void (* GtkListBoxForeachFunc) (GtkListBox* box, GtkListBoxRow* row, gpo
 typedef gboolean (* GtkListBoxFilterFunc) (GtkListBoxRow* row, gpointer user_data);
 typedef void (* GtkListBoxUpdateHeaderFunc) (GtkListBoxRow* row, GtkListBoxRow* before, gpointer user_data);
 typedef int (* GtkListBoxSortFunc) (GtkListBoxRow* row1, GtkListBoxRow* row2, gpointer user_data);
+typedef void (* GtkTextTagTableForeach) (GtkTextTag* tag, gpointer data);
+typedef GtkWidget* (* GtkFlowBoxCreateWidgetFunc) (GObject* item, gpointer user_data);
+typedef void (* GtkFlowBoxForeachFunc) (GtkFlowBox* box, GtkFlowBoxChild* child, gpointer user_data);
+typedef gboolean (* GtkFlowBoxFilterFunc) (GtkFlowBoxChild* child, gpointer user_data);
+typedef int (* GtkFlowBoxSortFunc) (GtkFlowBoxChild* child1, GtkFlowBoxChild* child2, gpointer user_data);
