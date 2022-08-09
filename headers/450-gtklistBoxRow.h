@@ -1,2 +1,12 @@
-extern GtkWidget* gtk_list_box_row_new(void);
-extern void gtk_list_box_row_set_child(GtkListBoxRow* row, GtkWidget* child);
+extern GtkWidget* gtk_list_box_row_new ( void );
+extern void gtk_list_box_row_changed ( GtkListBoxRow* row );
+extern gboolean gtk_list_box_row_get_activatable ( GtkListBoxRow* row );
+extern GtkWidget* gtk_list_box_row_get_child ( GtkListBoxRow* row );
+extern GtkWidget* gtk_list_box_row_get_header ( GtkListBoxRow* row );
+extern int gtk_list_box_row_get_index ( GtkListBoxRow* row );
+extern gboolean gtk_list_box_row_get_selectable ( GtkListBoxRow* row );
+extern gboolean gtk_list_box_row_is_selected ( GtkListBoxRow* row );
+extern void gtk_list_box_row_set_activatable ( GtkListBoxRow* row, gboolean activatable );
+extern void gtk_list_box_row_set_child ( GtkListBoxRow* row, GtkWidget* child );
+extern void gtk_list_box_row_set_header ( GtkListBoxRow* row, GtkWidget* header );
+extern void gtk_list_box_row_set_selectable ( GtkListBoxRow* row, gboolean selectable );

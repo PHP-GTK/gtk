@@ -58,6 +58,7 @@ typedef struct _GtkCheckButton GtkCheckButton;
 typedef struct _GtkColorButton GtkColorButton;
 typedef struct _GtkFontButton GtkFontButton;
 typedef struct _GtkGtkLinkButton GtkLinkButton;
+typedef struct _GtkAdjustment GtkAdjustment;
 typedef struct _GList GList;
 typedef struct _GdkRGBA GdkRGBA;
 struct _GList {
@@ -79,3 +80,8 @@ typedef void (* GDestroyNotify)(gpointer data);
 typedef gboolean (*GSourceFunc) (gpointer user_data);
 typedef gboolean (* GtkShortcutFunc) (GtkWidget* widget,GVariant* args,gpointer user_data);
 typedef void (* GtkWidgetActionActivateFunc) (GtkWidget* widget,const char* action_name,GVariant* parameter);
+typedef GtkWidget* (* GtkListBoxCreateWidgetFunc) (GObject* item, gpointer user_data);
+typedef void (* GtkListBoxForeachFunc) (GtkListBox* box, GtkListBoxRow* row, gpointer user_data);
+typedef gboolean (* GtkListBoxFilterFunc) (GtkListBoxRow* row, gpointer user_data);
+typedef void (* GtkListBoxUpdateHeaderFunc) (GtkListBoxRow* row, GtkListBoxRow* before, gpointer user_data);
+typedef int (* GtkListBoxSortFunc) (GtkListBoxRow* row1, GtkListBoxRow* row2, gpointer user_data);
