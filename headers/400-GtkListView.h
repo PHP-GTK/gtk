@@ -1,0 +1,11 @@
+extern GtkListItemFactory* gtk_list_view_get_factory ( GtkListView* self );
+extern GtkSelectionModel* gtk_list_view_get_model ( GtkListView* self );
+extern gboolean gtk_list_view_get_enable_rubberband ( GtkListView* self );
+extern GtkWidget* gtk_list_view_new ( GtkSelectionModel* model, GtkListItemFactory* factory );
+extern void gtk_list_view_set_enable_rubberband ( GtkListView* self, gboolean enable_rubberband );
+extern void gtk_list_view_set_model ( GtkListView* self, GtkSelectionModel* model );
+extern void gtk_list_view_set_factory ( GtkListView* self, GtkListItemFactory* factory );
+extern gboolean gtk_list_view_get_single_click_activate ( GtkListView* self );
+extern gboolean gtk_list_view_get_show_separators ( GtkListView* self );
+extern void gtk_list_view_set_show_separators ( GtkListView* self, gboolean show_separators );
+extern void gtk_list_view_set_single_click_activate ( GtkListView* self, gboolean single_click_activate );

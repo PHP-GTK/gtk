@@ -1,0 +1,17 @@
+extern int gtk_paned_get_position ( GtkPaned* paned );
+extern gboolean gtk_paned_get_resize_end_child ( GtkPaned* paned );
+extern GtkWidget* gtk_paned_new ( GtkOrientation orientation );
+extern gboolean gtk_paned_get_shrink_end_child ( GtkPaned* paned );
+extern GtkWidget* gtk_paned_get_end_child ( GtkPaned* paned );
+extern gboolean gtk_paned_get_resize_start_child ( GtkPaned* paned );
+extern gboolean gtk_paned_get_shrink_start_child ( GtkPaned* paned );
+extern void gtk_paned_set_end_child ( GtkPaned* paned, GtkWidget* child );
+extern void gtk_paned_set_position ( GtkPaned* paned, int position );
+extern GtkWidget* gtk_paned_get_start_child ( GtkPaned* paned );
+extern gboolean gtk_paned_get_wide_handle ( GtkPaned* paned );
+extern void gtk_paned_set_resize_end_child ( GtkPaned* paned, gboolean resize );
+extern void gtk_paned_set_shrink_end_child ( GtkPaned* paned, gboolean resize );
+extern void gtk_paned_set_start_child ( GtkPaned* paned, GtkWidget* child );
+extern void gtk_paned_set_wide_handle ( GtkPaned* paned, gboolean wide );
+extern void gtk_paned_set_shrink_start_child ( GtkPaned* paned, gboolean resize );
+extern void gtk_paned_set_resize_start_child ( GtkPaned* paned, gboolean resize );

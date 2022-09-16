@@ -1,0 +1,10 @@
+extern const char* gtk_font_button_get_title ( GtkFontButton* font_button );
+extern gboolean gtk_font_button_get_modal ( GtkFontButton* font_button );
+extern GtkWidget* gtk_font_button_new_with_font ( const char* fontname );
+extern void gtk_font_button_set_modal ( GtkFontButton* font_button, gboolean modal );
+extern void gtk_font_button_set_title ( GtkFontButton* font_button, const char* title );
+extern gboolean gtk_font_button_get_use_size ( GtkFontButton* font_button );
+extern gboolean gtk_font_button_get_use_font ( GtkFontButton* font_button );
+extern GtkWidget* gtk_font_button_new ( void );
+extern void gtk_font_button_set_use_font ( GtkFontButton* font_button, gboolean use_font );
+extern void gtk_font_button_set_use_size ( GtkFontButton* font_button, gboolean use_size );

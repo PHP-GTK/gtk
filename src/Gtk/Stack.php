@@ -6,6 +6,9 @@ use FFI\CData;
 use PGtk\Gtk\Gtk;
 use PGtk\Gtk\Gtk\Enum\StackTransitionType;
 
+/**
+ * @method setTransitionDuration(int $duration): void
+ */
 class Stack extends AbstractWidget
 {
     protected string $prefFunctionName = 'gtk_stack_';

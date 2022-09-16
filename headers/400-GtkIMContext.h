@@ -1,0 +1,14 @@
+extern gboolean gtk_im_context_delete_surrounding ( GtkIMContext* context, int offset, int n_chars );
+extern gboolean gtk_im_context_filter_key ( GtkIMContext* context, gboolean press, GdkSurface* surface, GdkDevice* device, guint32 time, guint keycode, GdkModifierType state, int group );
+extern void gtk_im_context_focus_in ( GtkIMContext* context );
+extern gboolean gtk_im_context_filter_keypress ( GtkIMContext* context, GdkEvent* event );
+extern gboolean gtk_im_context_get_surrounding ( GtkIMContext* context, char** text, int* cursor_index );
+extern void gtk_im_context_focus_out ( GtkIMContext* context );
+extern void gtk_im_context_set_client_widget ( GtkIMContext* context, GtkWidget* widget );
+extern gboolean gtk_im_context_get_surrounding_with_selection ( GtkIMContext* context, char** text, int* cursor_index, int* anchor_index );
+extern void gtk_im_context_reset ( GtkIMContext* context );
+extern void gtk_im_context_set_cursor_location ( GtkIMContext* context, const GdkRectangle* area );
+extern void gtk_im_context_get_preedit_string ( GtkIMContext* context, char** str, PangoAttrList** attrs, int* cursor_pos );
+extern void gtk_im_context_set_surrounding_with_selection ( GtkIMContext* context, const char* text, int len, int cursor_index, int anchor_index );
+extern void gtk_im_context_set_surrounding ( GtkIMContext* context, const char* text, int len, int cursor_index );
+extern void gtk_im_context_set_use_preedit ( GtkIMContext* context, gboolean use_preedit );

@@ -1,0 +1,13 @@
+extern GtkWidget* gtk_cell_view_new_with_text ( const char* text );
+extern GtkWidget* gtk_cell_view_new_with_markup ( const char* markup );
+extern GtkWidget* gtk_cell_view_new ( void );
+extern GtkWidget* gtk_cell_view_new_with_context ( GtkCellArea* area, GtkCellAreaContext* context );
+extern gboolean gtk_cell_view_get_draw_sensitive ( GtkCellView* cell_view );
+extern gboolean gtk_cell_view_get_fit_model ( GtkCellView* cell_view );
+extern GtkTreeModel* gtk_cell_view_get_model ( GtkCellView* cell_view );
+extern GtkWidget* gtk_cell_view_new_with_texture ( GdkTexture* texture );
+extern GtkTreePath* gtk_cell_view_get_displayed_row ( GtkCellView* cell_view );
+extern void gtk_cell_view_set_displayed_row ( GtkCellView* cell_view, GtkTreePath* path );
+extern void gtk_cell_view_set_draw_sensitive ( GtkCellView* cell_view, gboolean draw_sensitive );
+extern void gtk_cell_view_set_model ( GtkCellView* cell_view, GtkTreeModel* model );
+extern void gtk_cell_view_set_fit_model ( GtkCellView* cell_view, gboolean fit_model );

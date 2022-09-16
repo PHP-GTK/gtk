@@ -1,0 +1,15 @@
+extern GtkWidget* gtk_scale_new_with_range ( GtkOrientation orientation, double min, double max, double step );
+extern void gtk_scale_clear_marks ( GtkScale* scale );
+extern GtkWidget* gtk_scale_new ( GtkOrientation orientation, GtkAdjustment* adjustment );
+extern void gtk_scale_add_mark ( GtkScale* scale, double value, GtkPositionType position, const char* markup );
+extern PangoLayout* gtk_scale_get_layout ( GtkScale* scale );
+extern void gtk_scale_get_layout_offsets ( GtkScale* scale, int* x, int* y );
+extern int gtk_scale_get_digits ( GtkScale* scale );
+extern gboolean gtk_scale_get_has_origin ( GtkScale* scale );
+extern gboolean gtk_scale_get_draw_value ( GtkScale* scale );
+extern void gtk_scale_set_digits ( GtkScale* scale, int digits );
+extern GtkPositionType gtk_scale_get_value_pos ( GtkScale* scale );
+extern void gtk_scale_set_draw_value ( GtkScale* scale, gboolean draw_value );
+extern void gtk_scale_set_format_value_func ( GtkScale* scale, GtkScaleFormatValueFunc func, gpointer user_data, GDestroyNotify destroy_notify );
+extern void gtk_scale_set_value_pos ( GtkScale* scale, GtkPositionType pos );
+extern void gtk_scale_set_has_origin ( GtkScale* scale, gboolean has_origin );

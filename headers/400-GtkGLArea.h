@@ -1,0 +1,17 @@
+extern GtkWidget* gtk_gl_area_new ( void );
+extern gboolean gtk_gl_area_get_auto_render ( GtkGLArea* area );
+extern void gtk_gl_area_attach_buffers ( GtkGLArea* area );
+extern GdkGLContext* gtk_gl_area_get_context ( GtkGLArea* area );
+extern gboolean gtk_gl_area_get_has_stencil_buffer ( GtkGLArea* area );
+extern void gtk_gl_area_get_required_version ( GtkGLArea* area, int* major, int* minor );
+extern gboolean gtk_gl_area_get_has_depth_buffer ( GtkGLArea* area );
+extern gboolean gtk_gl_area_get_use_es ( GtkGLArea* area );
+extern void gtk_gl_area_set_auto_render ( GtkGLArea* area, gboolean auto_render );
+extern void gtk_gl_area_make_current ( GtkGLArea* area );
+extern void gtk_gl_area_queue_render ( GtkGLArea* area );
+extern GError* gtk_gl_area_get_error ( GtkGLArea* area );
+extern void gtk_gl_area_set_error ( GtkGLArea* area, const GError* error );
+extern void gtk_gl_area_set_use_es ( GtkGLArea* area, gboolean use_es );
+extern void gtk_gl_area_set_required_version ( GtkGLArea* area, int major, int minor );
+extern void gtk_gl_area_set_has_stencil_buffer ( GtkGLArea* area, gboolean has_stencil_buffer );
+extern void gtk_gl_area_set_has_depth_buffer ( GtkGLArea* area, gboolean has_depth_buffer );

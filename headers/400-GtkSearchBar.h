@@ -1,0 +1,10 @@
+extern void gtk_search_bar_connect_entry ( GtkSearchBar* bar, GtkEditable* entry );
+extern GtkWidget* gtk_search_bar_new ( void );
+extern gboolean gtk_search_bar_get_search_mode ( GtkSearchBar* bar );
+extern GtkWidget* gtk_search_bar_get_key_capture_widget ( GtkSearchBar* bar );
+extern GtkWidget* gtk_search_bar_get_child ( GtkSearchBar* bar );
+extern void gtk_search_bar_set_child ( GtkSearchBar* bar, GtkWidget* child );
+extern void gtk_search_bar_set_show_close_button ( GtkSearchBar* bar, gboolean visible );
+extern void gtk_search_bar_set_key_capture_widget ( GtkSearchBar* bar, GtkWidget* widget );
+extern gboolean gtk_search_bar_get_show_close_button ( GtkSearchBar* bar );
+extern void gtk_search_bar_set_search_mode ( GtkSearchBar* bar, gboolean search_mode );

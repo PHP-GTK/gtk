@@ -1,0 +1,13 @@
+extern const char* gtk_stack_page_get_name ( GtkStackPage* self );
+extern gboolean gtk_stack_page_get_needs_attention ( GtkStackPage* self );
+extern const char* gtk_stack_page_get_icon_name ( GtkStackPage* self );
+extern GtkWidget* gtk_stack_page_get_child ( GtkStackPage* self );
+extern gboolean gtk_stack_page_get_use_underline ( GtkStackPage* self );
+extern gboolean gtk_stack_page_get_visible ( GtkStackPage* self );
+extern void gtk_stack_page_set_icon_name ( GtkStackPage* self, const char* setting );
+extern const char* gtk_stack_page_get_title ( GtkStackPage* self );
+extern void gtk_stack_page_set_name ( GtkStackPage* self, const char* setting );
+extern void gtk_stack_page_set_needs_attention ( GtkStackPage* self, gboolean setting );
+extern void gtk_stack_page_set_title ( GtkStackPage* self, const char* setting );
+extern void gtk_stack_page_set_use_underline ( GtkStackPage* self, gboolean setting );
+extern void gtk_stack_page_set_visible ( GtkStackPage* self, gboolean visible );

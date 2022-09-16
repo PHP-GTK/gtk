@@ -1,0 +1,13 @@
+extern int gtk_grid_layout_get_baseline_row ( GtkGridLayout* grid );
+extern gboolean gtk_grid_layout_get_column_homogeneous ( GtkGridLayout* grid );
+extern GtkLayoutManager* gtk_grid_layout_new ( void );
+extern gboolean gtk_grid_layout_get_row_homogeneous ( GtkGridLayout* grid );
+extern GtkBaselinePosition gtk_grid_layout_get_row_baseline_position ( GtkGridLayout* grid, int row );
+extern guint gtk_grid_layout_get_column_spacing ( GtkGridLayout* grid );
+extern guint gtk_grid_layout_get_row_spacing ( GtkGridLayout* grid );
+extern void gtk_grid_layout_set_column_spacing ( GtkGridLayout* grid, guint spacing );
+extern void gtk_grid_layout_set_column_homogeneous ( GtkGridLayout* grid, gboolean homogeneous );
+extern void gtk_grid_layout_set_baseline_row ( GtkGridLayout* grid, int row );
+extern void gtk_grid_layout_set_row_baseline_position ( GtkGridLayout* grid, int row, GtkBaselinePosition pos );
+extern void gtk_grid_layout_set_row_spacing ( GtkGridLayout* grid, guint spacing );
+extern void gtk_grid_layout_set_row_homogeneous ( GtkGridLayout* grid, gboolean homogeneous );

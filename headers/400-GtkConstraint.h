@@ -1,0 +1,13 @@
+extern GtkConstraint* gtk_constraint_new ( GtkConstraintTarget* target, GtkConstraintAttribute target_attribute, GtkConstraintRelation relation, GtkConstraintTarget* source, GtkConstraintAttribute source_attribute, double multiplier, double constant, int strength );
+extern GtkConstraint* gtk_constraint_new_constant ( GtkConstraintTarget* target, GtkConstraintAttribute target_attribute, GtkConstraintRelation relation, double constant, int strength );
+extern double gtk_constraint_get_constant ( GtkConstraint* constraint );
+extern GtkConstraintRelation gtk_constraint_get_relation ( GtkConstraint* constraint );
+extern double gtk_constraint_get_multiplier ( GtkConstraint* constraint );
+extern GtkConstraintTarget* gtk_constraint_get_source ( GtkConstraint* constraint );
+extern GtkConstraintAttribute gtk_constraint_get_source_attribute ( GtkConstraint* constraint );
+extern GtkConstraintAttribute gtk_constraint_get_target_attribute ( GtkConstraint* constraint );
+extern int gtk_constraint_get_strength ( GtkConstraint* constraint );
+extern gboolean gtk_constraint_is_attached ( GtkConstraint* constraint );
+extern gboolean gtk_constraint_is_required ( GtkConstraint* constraint );
+extern GtkConstraintTarget* gtk_constraint_get_target ( GtkConstraint* constraint );
+extern gboolean gtk_constraint_is_constant ( GtkConstraint* constraint );

@@ -1,0 +1,15 @@
+extern char** gtk_application_get_actions_for_accel ( GtkApplication* application, const char* accel );
+extern void gtk_application_add_window ( GtkApplication* application, GtkWindow* window );
+extern GtkApplication* gtk_application_new ( const char* application_id, GApplicationFlags flags );
+extern char** gtk_application_get_accels_for_action ( GtkApplication* application, const char* detailed_action_name );
+extern GList* gtk_application_get_windows ( GtkApplication* application );
+extern GMenu* gtk_application_get_menu_by_id ( GtkApplication* application, const char* id );
+extern GMenuModel* gtk_application_get_menubar ( GtkApplication* application );
+extern void gtk_application_remove_window ( GtkApplication* application, GtkWindow* window );
+extern GtkWindow* gtk_application_get_window_by_id ( GtkApplication* application, guint id );
+extern guint gtk_application_inhibit ( GtkApplication* application, GtkWindow* window, GtkApplicationInhibitFlags flags, const char* reason );
+extern GtkWindow* gtk_application_get_active_window ( GtkApplication* application );
+extern char** gtk_application_list_action_descriptions ( GtkApplication* application );
+extern void gtk_application_set_menubar ( GtkApplication* application, GMenuModel* menubar );
+extern void gtk_application_uninhibit ( GtkApplication* application, guint cookie );
+extern void gtk_application_set_accels_for_action ( GtkApplication* application, const char* detailed_action_name, const char* const* accels );

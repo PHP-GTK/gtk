@@ -1,0 +1,16 @@
+extern void gtk_adjustment_configure ( GtkAdjustment* adjustment, double value, double lower, double upper, double step_increment, double page_increment, double page_size );
+extern double gtk_adjustment_get_page_increment ( GtkAdjustment* adjustment );
+extern void gtk_adjustment_clamp_page ( GtkAdjustment* adjustment, double lower, double upper );
+extern double gtk_adjustment_get_lower ( GtkAdjustment* adjustment );
+extern GtkAdjustment* gtk_adjustment_new ( double value, double lower, double upper, double step_increment, double page_increment, double page_size );
+extern double gtk_adjustment_get_minimum_increment ( GtkAdjustment* adjustment );
+extern double gtk_adjustment_get_page_size ( GtkAdjustment* adjustment );
+extern double gtk_adjustment_get_value ( GtkAdjustment* adjustment );
+extern void gtk_adjustment_set_page_increment ( GtkAdjustment* adjustment, double page_increment );
+extern double gtk_adjustment_get_step_increment ( GtkAdjustment* adjustment );
+extern double gtk_adjustment_get_upper ( GtkAdjustment* adjustment );
+extern void gtk_adjustment_set_lower ( GtkAdjustment* adjustment, double lower );
+extern void gtk_adjustment_set_page_size ( GtkAdjustment* adjustment, double page_size );
+extern void gtk_adjustment_set_upper ( GtkAdjustment* adjustment, double upper );
+extern void gtk_adjustment_set_value ( GtkAdjustment* adjustment, double value );
+extern void gtk_adjustment_set_step_increment ( GtkAdjustment* adjustment, double step_increment );

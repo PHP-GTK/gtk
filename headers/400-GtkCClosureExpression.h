@@ -1,0 +1,1 @@
+extern GtkExpression* gtk_cclosure_expression_new ( GType value_type, GClosureMarshal marshal, guint n_params, GtkExpression** params, GCallback callback_func, gpointer user_data, GClosureNotify user_destroy );

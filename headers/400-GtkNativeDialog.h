@@ -1,0 +1,10 @@
+extern const char* gtk_native_dialog_get_title ( GtkNativeDialog* self );
+extern gboolean gtk_native_dialog_get_modal ( GtkNativeDialog* self );
+extern void gtk_native_dialog_destroy ( GtkNativeDialog* self );
+extern GtkWindow* gtk_native_dialog_get_transient_for ( GtkNativeDialog* self );
+extern void gtk_native_dialog_hide ( GtkNativeDialog* self );
+extern void gtk_native_dialog_set_title ( GtkNativeDialog* self, const char* title );
+extern gboolean gtk_native_dialog_get_visible ( GtkNativeDialog* self );
+extern void gtk_native_dialog_set_modal ( GtkNativeDialog* self, gboolean modal );
+extern void gtk_native_dialog_set_transient_for ( GtkNativeDialog* self, GtkWindow* parent );
+extern void gtk_native_dialog_show ( GtkNativeDialog* self );

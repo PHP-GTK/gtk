@@ -1,0 +1,10 @@
+extern void gtk_file_filter_add_pattern ( GtkFileFilter* filter, const char* pattern );
+extern GtkFileFilter* gtk_file_filter_new_from_gvariant ( GVariant* variant );
+extern GtkFileFilter* gtk_file_filter_new ( void );
+extern void gtk_file_filter_add_mime_type ( GtkFileFilter* filter, const char* mime_type );
+extern void gtk_file_filter_add_pixbuf_formats ( GtkFileFilter* filter );
+extern const char** gtk_file_filter_get_attributes ( GtkFileFilter* filter );
+extern void gtk_file_filter_add_suffix ( GtkFileFilter* filter, const char* suffix );
+extern void gtk_file_filter_set_name ( GtkFileFilter* filter, const char* name );
+extern const char* gtk_file_filter_get_name ( GtkFileFilter* filter );
+extern GVariant* gtk_file_filter_to_gvariant ( GtkFileFilter* filter );

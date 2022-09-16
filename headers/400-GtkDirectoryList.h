@@ -1,0 +1,11 @@
+extern const char* gtk_directory_list_get_attributes ( GtkDirectoryList* self );
+extern const GError* gtk_directory_list_get_error ( GtkDirectoryList* self );
+extern GFile* gtk_directory_list_get_file ( GtkDirectoryList* self );
+extern GtkDirectoryList* gtk_directory_list_new ( const char* attributes, GFile* file );
+extern gboolean gtk_directory_list_get_monitored ( GtkDirectoryList* self );
+extern gboolean gtk_directory_list_is_loading ( GtkDirectoryList* self );
+extern int gtk_directory_list_get_io_priority ( GtkDirectoryList* self );
+extern void gtk_directory_list_set_attributes ( GtkDirectoryList* self, const char* attributes );
+extern void gtk_directory_list_set_io_priority ( GtkDirectoryList* self, int io_priority );
+extern void gtk_directory_list_set_file ( GtkDirectoryList* self, GFile* file );
+extern void gtk_directory_list_set_monitored ( GtkDirectoryList* self, gboolean monitored );

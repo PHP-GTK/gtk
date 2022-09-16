@@ -1,0 +1,13 @@
+extern GDateTime* gtk_calendar_get_date ( GtkCalendar* self );
+extern GtkWidget* gtk_calendar_new ( void );
+extern gboolean gtk_calendar_get_show_day_names ( GtkCalendar* self );
+extern gboolean gtk_calendar_get_show_heading ( GtkCalendar* self );
+extern gboolean gtk_calendar_get_day_is_marked ( GtkCalendar* calendar, guint day );
+extern void gtk_calendar_clear_marks ( GtkCalendar* calendar );
+extern gboolean gtk_calendar_get_show_week_numbers ( GtkCalendar* self );
+extern void gtk_calendar_set_show_day_names ( GtkCalendar* self, gboolean value );
+extern void gtk_calendar_select_day ( GtkCalendar* self, GDateTime* date );
+extern void gtk_calendar_set_show_week_numbers ( GtkCalendar* self, gboolean value );
+extern void gtk_calendar_mark_day ( GtkCalendar* calendar, guint day );
+extern void gtk_calendar_unmark_day ( GtkCalendar* calendar, guint day );
+extern void gtk_calendar_set_show_heading ( GtkCalendar* self, gboolean value );

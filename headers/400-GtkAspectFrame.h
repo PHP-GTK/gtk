@@ -1,0 +1,11 @@
+extern GtkWidget* gtk_aspect_frame_new ( float xalign, float yalign, float ratio, gboolean obey_child );
+extern gboolean gtk_aspect_frame_get_obey_child ( GtkAspectFrame* self );
+extern float gtk_aspect_frame_get_ratio ( GtkAspectFrame* self );
+extern GtkWidget* gtk_aspect_frame_get_child ( GtkAspectFrame* self );
+extern void gtk_aspect_frame_set_obey_child ( GtkAspectFrame* self, gboolean obey_child );
+extern float gtk_aspect_frame_get_xalign ( GtkAspectFrame* self );
+extern float gtk_aspect_frame_get_yalign ( GtkAspectFrame* self );
+extern void gtk_aspect_frame_set_child ( GtkAspectFrame* self, GtkWidget* child );
+extern void gtk_aspect_frame_set_ratio ( GtkAspectFrame* self, float ratio );
+extern void gtk_aspect_frame_set_yalign ( GtkAspectFrame* self, float yalign );
+extern void gtk_aspect_frame_set_xalign ( GtkAspectFrame* self, float xalign );

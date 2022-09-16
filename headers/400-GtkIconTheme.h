@@ -1,0 +1,16 @@
+extern void gtk_icon_theme_add_resource_path ( GtkIconTheme* self, const char* path );
+extern GtkIconTheme* gtk_icon_theme_new ( void );
+extern GdkDisplay* gtk_icon_theme_get_display ( GtkIconTheme* self );
+extern void gtk_icon_theme_add_search_path ( GtkIconTheme* self, const char* path );
+extern int* gtk_icon_theme_get_icon_sizes ( GtkIconTheme* self, const char* icon_name );
+extern char** gtk_icon_theme_get_icon_names ( GtkIconTheme* self );
+extern char** gtk_icon_theme_get_resource_path ( GtkIconTheme* self );
+extern char** gtk_icon_theme_get_search_path ( GtkIconTheme* self );
+extern char* gtk_icon_theme_get_theme_name ( GtkIconTheme* self );
+extern gboolean gtk_icon_theme_has_gicon ( GtkIconTheme* self, GIcon* gicon );
+extern GtkIconPaintable* gtk_icon_theme_lookup_by_gicon ( GtkIconTheme* self, GIcon* icon, int size, int scale, GtkTextDirection direction, GtkIconLookupFlags flags );
+extern gboolean gtk_icon_theme_has_icon ( GtkIconTheme* self, const char* icon_name );
+extern GtkIconPaintable* gtk_icon_theme_lookup_icon ( GtkIconTheme* self, const char* icon_name, const char** fallbacks, int size, int scale, GtkTextDirection direction, GtkIconLookupFlags flags );
+extern void gtk_icon_theme_set_resource_path ( GtkIconTheme* self, const char* const* path );
+extern void gtk_icon_theme_set_search_path ( GtkIconTheme* self, const char* const* path );
+extern void gtk_icon_theme_set_theme_name ( GtkIconTheme* self, const char* theme_name );

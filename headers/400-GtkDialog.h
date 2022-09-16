@@ -1,0 +1,12 @@
+extern GtkWidget* gtk_dialog_new_with_buttons ( const char* title, GtkWindow* parent, GtkDialogFlags flags, const char* first_button_text, ... );
+extern void gtk_dialog_add_action_widget ( GtkDialog* dialog, GtkWidget* child, int response_id );
+extern GtkWidget* gtk_dialog_add_button ( GtkDialog* dialog, const char* button_text, int response_id );
+extern GtkWidget* gtk_dialog_new ( void );
+extern GtkWidget* gtk_dialog_get_header_bar ( GtkDialog* dialog );
+extern void gtk_dialog_add_buttons ( GtkDialog* dialog, const char* first_button_text, ... );
+extern GtkWidget* gtk_dialog_get_widget_for_response ( GtkDialog* dialog, int response_id );
+extern GtkWidget* gtk_dialog_get_content_area ( GtkDialog* dialog );
+extern void gtk_dialog_response ( GtkDialog* dialog, int response_id );
+extern int gtk_dialog_get_response_for_widget ( GtkDialog* dialog, GtkWidget* widget );
+extern void gtk_dialog_set_default_response ( GtkDialog* dialog, int response_id );
+extern void gtk_dialog_set_response_sensitive ( GtkDialog* dialog, int response_id, gboolean setting );

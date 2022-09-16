@@ -1,0 +1,10 @@
+extern void gtk_constraint_layout_add_constraint ( GtkConstraintLayout* layout, GtkConstraint* constraint );
+extern GtkLayoutManager* gtk_constraint_layout_new ( void );
+extern GList* gtk_constraint_layout_add_constraints_from_description ( GtkConstraintLayout* layout, const char* const* lines, gsize n_lines, int hspacing, int vspacing, GError** error, const char* first_view, ... );
+extern GList* gtk_constraint_layout_add_constraints_from_descriptionv ( GtkConstraintLayout* layout, const char* const* lines, gsize n_lines, int hspacing, int vspacing, GHashTable* views, GError** error );
+extern GListModel* gtk_constraint_layout_observe_constraints ( GtkConstraintLayout* layout );
+extern void gtk_constraint_layout_add_guide ( GtkConstraintLayout* layout, GtkConstraintGuide* guide );
+extern void gtk_constraint_layout_remove_constraint ( GtkConstraintLayout* layout, GtkConstraint* constraint );
+extern GListModel* gtk_constraint_layout_observe_guides ( GtkConstraintLayout* layout );
+extern void gtk_constraint_layout_remove_all_constraints ( GtkConstraintLayout* layout );
+extern void gtk_constraint_layout_remove_guide ( GtkConstraintLayout* layout, GtkConstraintGuide* guide );

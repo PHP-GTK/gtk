@@ -1,0 +1,11 @@
+extern GtkConstraintGuide* gtk_constraint_guide_new ( void );
+extern void gtk_constraint_guide_get_max_size ( GtkConstraintGuide* guide, int* width, int* height );
+extern void gtk_constraint_guide_get_min_size ( GtkConstraintGuide* guide, int* width, int* height );
+extern const char* gtk_constraint_guide_get_name ( GtkConstraintGuide* guide );
+extern void gtk_constraint_guide_set_max_size ( GtkConstraintGuide* guide, int width, int height );
+extern GtkConstraintStrength gtk_constraint_guide_get_strength ( GtkConstraintGuide* guide );
+extern void gtk_constraint_guide_set_min_size ( GtkConstraintGuide* guide, int width, int height );
+extern void gtk_constraint_guide_set_name ( GtkConstraintGuide* guide, const char* name );
+extern void gtk_constraint_guide_get_nat_size ( GtkConstraintGuide* guide, int* width, int* height );
+extern void gtk_constraint_guide_set_nat_size ( GtkConstraintGuide* guide, int width, int height );
+extern void gtk_constraint_guide_set_strength ( GtkConstraintGuide* guide, GtkConstraintStrength strength );

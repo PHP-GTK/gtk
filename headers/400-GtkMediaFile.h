@@ -1,0 +1,13 @@
+extern GtkMediaStream* gtk_media_file_new_for_file ( GFile* file );
+extern GtkMediaStream* gtk_media_file_new ( void );
+extern GtkMediaStream* gtk_media_file_new_for_input_stream ( GInputStream* stream );
+extern GtkMediaStream* gtk_media_file_new_for_filename ( const char* filename );
+extern GFile* gtk_media_file_get_file ( GtkMediaFile* self );
+extern void gtk_media_file_clear ( GtkMediaFile* self );
+extern void gtk_media_file_set_filename ( GtkMediaFile* self, const char* filename );
+extern GInputStream* gtk_media_file_get_input_stream ( GtkMediaFile* self );
+extern void gtk_media_file_set_file ( GtkMediaFile* self, GFile* file );
+extern GtkMediaStream* gtk_media_file_new_for_resource ( const char* resource_path );
+extern void gtk_media_file_set_input_stream ( GtkMediaFile* self, GInputStream* stream );
+extern void gtk_media_file_set_resource ( GtkMediaFile* self, const char* resource_path );
+extern void open ( GtkMediaFile* self );

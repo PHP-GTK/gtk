@@ -1,0 +1,12 @@
+extern GdkDrop* gtk_drop_target_get_drop ( GtkDropTarget* self );
+extern GdkDragAction gtk_drop_target_get_actions ( GtkDropTarget* self );
+extern GdkContentFormats* gtk_drop_target_get_formats ( GtkDropTarget* self );
+extern const GType* gtk_drop_target_get_gtypes ( GtkDropTarget* self, gsize* n_types );
+extern GdkDrop* gtk_drop_target_get_current_drop ( GtkDropTarget* self );
+extern GtkDropTarget* gtk_drop_target_new ( GType type, GdkDragAction actions );
+extern gboolean gtk_drop_target_get_preload ( GtkDropTarget* self );
+extern void gtk_drop_target_reject ( GtkDropTarget* self );
+extern const GValue* gtk_drop_target_get_value ( GtkDropTarget* self );
+extern void gtk_drop_target_set_gtypes ( GtkDropTarget* self, GType* types, gsize n_types );
+extern void gtk_drop_target_set_actions ( GtkDropTarget* self, GdkDragAction actions );
+extern void gtk_drop_target_set_preload ( GtkDropTarget* self, gboolean preload );

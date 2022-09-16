@@ -1,0 +1,15 @@
+extern GtkWidget* gtk_video_new_for_file ( GFile* file );
+extern GtkWidget* gtk_video_new_for_filename ( const char* filename );
+extern GtkWidget* gtk_video_new ( void );
+extern GtkWidget* gtk_video_new_for_media_stream ( GtkMediaStream* stream );
+extern GFile* gtk_video_get_file ( GtkVideo* self );
+extern gboolean gtk_video_get_loop ( GtkVideo* self );
+extern GtkMediaStream* gtk_video_get_media_stream ( GtkVideo* self );
+extern gboolean gtk_video_get_autoplay ( GtkVideo* self );
+extern GtkWidget* gtk_video_new_for_resource ( const char* resource_path );
+extern void gtk_video_set_file ( GtkVideo* self, GFile* file );
+extern void gtk_video_set_autoplay ( GtkVideo* self, gboolean autoplay );
+extern void gtk_video_set_filename ( GtkVideo* self, const char* filename );
+extern void gtk_video_set_media_stream ( GtkVideo* self, GtkMediaStream* stream );
+extern void gtk_video_set_resource ( GtkVideo* self, const char* resource_path );
+extern void gtk_video_set_loop ( GtkVideo* self, gboolean loop );

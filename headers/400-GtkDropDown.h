@@ -1,0 +1,17 @@
+extern GtkWidget* gtk_drop_down_new_from_strings ( const char* const* strings );
+extern GtkWidget* gtk_drop_down_new ( GListModel* model, GtkExpression* expression );
+extern gboolean gtk_drop_down_get_enable_search ( GtkDropDown* self );
+extern GtkExpression* gtk_drop_down_get_expression ( GtkDropDown* self );
+extern GtkListItemFactory* gtk_drop_down_get_list_factory ( GtkDropDown* self );
+extern GListModel* gtk_drop_down_get_model ( GtkDropDown* self );
+extern guint gtk_drop_down_get_selected ( GtkDropDown* self );
+extern GObject* gtk_drop_down_get_selected_item ( GtkDropDown* self );
+extern GtkListItemFactory* gtk_drop_down_get_factory ( GtkDropDown* self );
+extern void gtk_drop_down_set_expression ( GtkDropDown* self, GtkExpression* expression );
+extern gboolean gtk_drop_down_get_show_arrow ( GtkDropDown* self );
+extern void gtk_drop_down_set_enable_search ( GtkDropDown* self, gboolean enable_search );
+extern void gtk_drop_down_set_model ( GtkDropDown* self, GListModel* model );
+extern void gtk_drop_down_set_factory ( GtkDropDown* self, GtkListItemFactory* factory );
+extern void gtk_drop_down_set_list_factory ( GtkDropDown* self, GtkListItemFactory* factory );
+extern void gtk_drop_down_set_selected ( GtkDropDown* self, guint position );
+extern void gtk_drop_down_set_show_arrow ( GtkDropDown* self, gboolean show_arrow );

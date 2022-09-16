@@ -1,0 +1,15 @@
+extern GtkWidget* gtk_level_bar_new_for_interval ( double min_value, double max_value );
+extern void gtk_level_bar_add_offset_value ( GtkLevelBar* self, const char* name, double value );
+extern gboolean gtk_level_bar_get_inverted ( GtkLevelBar* self );
+extern GtkWidget* gtk_level_bar_new ( void );
+extern GtkLevelBarMode gtk_level_bar_get_mode ( GtkLevelBar* self );
+extern gboolean gtk_level_bar_get_offset_value ( GtkLevelBar* self, const char* name, double* value );
+extern double gtk_level_bar_get_min_value ( GtkLevelBar* self );
+extern double gtk_level_bar_get_max_value ( GtkLevelBar* self );
+extern double gtk_level_bar_get_value ( GtkLevelBar* self );
+extern void gtk_level_bar_set_max_value ( GtkLevelBar* self, double value );
+extern void gtk_level_bar_remove_offset_value ( GtkLevelBar* self, const char* name );
+extern void gtk_level_bar_set_inverted ( GtkLevelBar* self, gboolean inverted );
+extern void gtk_level_bar_set_mode ( GtkLevelBar* self, GtkLevelBarMode mode );
+extern void gtk_level_bar_set_min_value ( GtkLevelBar* self, double value );
+extern void gtk_level_bar_set_value ( GtkLevelBar* self, double value );

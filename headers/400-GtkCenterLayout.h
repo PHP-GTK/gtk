@@ -1,0 +1,11 @@
+extern GtkBaselinePosition gtk_center_layout_get_baseline_position ( GtkCenterLayout* self );
+extern GtkWidget* gtk_center_layout_get_end_widget ( GtkCenterLayout* self );
+extern GtkWidget* gtk_center_layout_get_center_widget ( GtkCenterLayout* self );
+extern GtkLayoutManager* gtk_center_layout_new ( void );
+extern void gtk_center_layout_set_baseline_position ( GtkCenterLayout* self, GtkBaselinePosition baseline_position );
+extern GtkWidget* gtk_center_layout_get_start_widget ( GtkCenterLayout* self );
+extern void gtk_center_layout_set_end_widget ( GtkCenterLayout* self, GtkWidget* widget );
+extern GtkOrientation gtk_center_layout_get_orientation ( GtkCenterLayout* self );
+extern void gtk_center_layout_set_orientation ( GtkCenterLayout* self, GtkOrientation orientation );
+extern void gtk_center_layout_set_center_widget ( GtkCenterLayout* self, GtkWidget* widget );
+extern void gtk_center_layout_set_start_widget ( GtkCenterLayout* self, GtkWidget* widget );

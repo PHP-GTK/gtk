@@ -1,0 +1,10 @@
+extern gboolean gtk_single_selection_get_autoselect ( GtkSingleSelection* self );
+extern GListModel* gtk_single_selection_get_model ( GtkSingleSelection* self );
+extern GtkSingleSelection* gtk_single_selection_new ( GListModel* model );
+extern gboolean gtk_single_selection_get_can_unselect ( GtkSingleSelection* self );
+extern void gtk_single_selection_set_can_unselect ( GtkSingleSelection* self, gboolean can_unselect );
+extern guint gtk_single_selection_get_selected ( GtkSingleSelection* self );
+extern GObject* gtk_single_selection_get_selected_item ( GtkSingleSelection* self );
+extern void gtk_single_selection_set_autoselect ( GtkSingleSelection* self, gboolean autoselect );
+extern void gtk_single_selection_set_model ( GtkSingleSelection* self, GListModel* model );
+extern void gtk_single_selection_set_selected ( GtkSingleSelection* self, guint position );
