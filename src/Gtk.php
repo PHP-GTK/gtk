@@ -8,27 +8,40 @@ class Gtk
 
     private $ffi;
 
-    private function __construct(string $path)
+    private $filesName = [];
+
+    public function __construct(Configuration $configuration = new Configuration())
     {
-        $data = '';
         $files = scandir(__DIR__ . '/../headers');
         foreach($files as $file) {
             if(!is_dir(__DIR__ . "/../headers/" . $file)) {
-                $data .= file_get_contents(__DIR__ . "/../headers/" . $file) . PHP_EOL . PHP_EOL;
+                if (!isset($this->filesName[$file])) {
+                    $this->filesName[$file] = '';
+                }
+                $this->filesName[$file] .= file_get_contents(__DIR__ . "/../headers/" . $file) . PHP_EOL . PHP_EOL;
+            } else {
+                if ($file == '.' || $file == '..') {
+                    continue;
+                }
+                foreach (scandir(__DIR__ . '/../headers/' . $file) as $value) {
+                    if (is_file(__DIR__ . "/../headers/" . $file . '/' . $value)) {
+                        $this->filesName[$value] .= file_get_contents(__DIR__ . "/../headers/" . $file . '/' . $value) . PHP_EOL . PHP_EOL;
+                    }
+                }
             }
         }
 
-        $this->ffi = \FFI::cdef($data, $path);
+        $this->ffi = \FFI::cdef(implode(PHP_EOL, $this->filesName), $configuration->path);
         $this->ffi->gtk_init();
     }
 
     /**
      * Singleton
      */
-    public static function getInstance(string $path = 'libgtk-4.so')
+    public static function getInstance(Configuration $configuration = new Configuration())
     {
         if(self::$instance === NULL) {
-            self::$instance = new self($path);
+            self::$instance = new self($configuration);
         }
         return self::$instance;
     }

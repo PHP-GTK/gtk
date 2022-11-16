@@ -10,10 +10,9 @@ class WindowTest extends TestCase
 {
     public function testWindow()
     {
-        Gtk::getInstance(path: __DIR__ . '/../../libs/_build/gtk/libgtk-4.so');
         $win = new Window();
         $this->assertNull($win->getTitle());
-        $this->assertTrue($win->getResizable());
+        $this->assertTrue((boolean)$win->getResizable());
         $this->assertEquals(
             [
                 'width' => 0,
@@ -27,7 +26,7 @@ class WindowTest extends TestCase
         $win->unfullscreen();
         $win->setResizable(false);
 
-        $this->assertFalse($win->getResizable());
+        $this->assertFalse((boolean)$win->getResizable());
         $this->assertEquals('title', $win->getTitle());
         $this->assertEquals(
             [
