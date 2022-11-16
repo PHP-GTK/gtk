@@ -15,12 +15,14 @@ class ToggleButton extends Button
     protected string $cast = 'GtkToggleButton';
     protected string $prefFunctionName = 'gtk_toggle_button_';
 
+    public readonly Widget $widget;
+
     public function __construct(string $label = null)
     {
         if ($label === null) {
-            parent::__construct(new Widget(Gtk::getFFI()->gtk_toggle_button_new()));
+            $this->widget = new Widget(Gtk::getFFI()->gtk_toggle_button_new());
         }else{
-            parent::__construct(new Widget(Gtk::getFFI()->gtk_toggle_button_new_with_label($label)));
+            $this->widget = new Widget(Gtk::getFFI()->gtk_toggle_button_new_with_label($label));
         }
     }
 
