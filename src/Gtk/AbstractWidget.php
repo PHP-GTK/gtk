@@ -8,7 +8,7 @@ abstract class AbstractWidget implements WidgetInterface
 {
     protected string $cast = '';
     protected string $prefFunctionName = '';
-    private array $methods = [];
+    private static array $methods = [];
 
     public function __construct(protected readonly Widget $widget)
     {
@@ -16,14 +16,15 @@ abstract class AbstractWidget implements WidgetInterface
 
     public function __call(string $name, array $arguments)
     {
-        if (count($this->methods) === 0) {
+        if (!isset(self::$methods[$this::class])) {
             $this->saveMethods();
         }
-        if (!isset($this->methods[$name])) {
+        if (!isset(self::$methods[$this::class][$name])) {
             throw new \RuntimeException(sprintf('Method not found %s in %s', $name, $this::class));
         }
-        $functionName = $this->prefFunctionName . strtolower(preg_replace('~([A-Z])~', '_$1', $name));
-        $cast = $this->cast . ' *';
+        $method = self::$methods[$this::class][$name];
+        $functionName = $method['prefFunctionName'];
+        $cast = $method['cast'] . ' *';
 
         return Gtk::getFFI()->$functionName(Gtk::getFFI()->cast($cast, $this->widget->widget), ...$arguments);
     }
@@ -32,10 +33,17 @@ abstract class AbstractWidget implements WidgetInterface
     {
         $className = $this::class;
         while (true) {
-            $comment = (new \ReflectionClass($className))->getDocComment();
+            $class = (new \ReflectionClass($className));
+            $comment = $class->getDocComment();
+            $properties = $class->getDefaultProperties();
             preg_match_all('~@method(.*)\(.*\)~', $comment, $arr);
             foreach ($arr[1] as $value) {
-                $this->methods[trim($value)] = '';
+                if (isset($properties['cast']) && isset($properties['prefFunctionName'])) {
+                    self::$methods[$this::class][trim($value)] = [
+                        'cast' => $properties['cast'],
+                        'prefFunctionName' => $properties['prefFunctionName'] . strtolower(preg_replace('~([A-Z])~', '_$1', trim($value))),
+                    ];
+                }
             }
             $className = get_parent_class($className);
             if (!$className) {

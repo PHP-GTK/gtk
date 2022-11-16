@@ -10,7 +10,7 @@ use PGtk\Gtk\Gtk;
  * @method setActive(int $is_active): void;
  * @method toggled(): void;
  */
-class ToggleButton extends AbstractWidget
+class ToggleButton extends Button
 {
     protected string $cast = 'GtkToggleButton';
     protected string $prefFunctionName = 'gtk_toggle_button_';
