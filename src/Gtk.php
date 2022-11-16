@@ -55,4 +55,19 @@ class Gtk
 
         return $instance->ffi;
     }
+
+    public static function getMajorVersion(): int
+    {
+        return self::getFFI()->gtk_get_major_version();
+    }
+
+    public static function getMinorVersion(): int
+    {
+        return self::getFFI()->gtk_get_minor_version();
+    }
+
+    public static function getMicroVersion(): int
+    {
+        return self::getFFI()->gtk_get_micro_version();
+    }
 }
