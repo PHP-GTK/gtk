@@ -11,11 +11,11 @@ use FFI\CData;
  *
  * @method setSizeRequest(int $width, int $height): void;
  * @method show(): void;
- * @method setMarginTop(int): void;
- * @method setMarginBottom(int): void;
- * @method setMarginEnd(int): void;
- * @method setMarginStart(int): void;
- * @method setTooltipText(string): void;
+ * @method setMarginTop(int $margin): void;
+ * @method setMarginBottom(int $margin): void;
+ * @method setMarginEnd(int $margin): void;
+ * @method setMarginStart(int $margin): void;
+ * @method setTooltipText(string $text): void;
  */
 class Widget
 {

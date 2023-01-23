@@ -35,7 +35,7 @@ class Entry extends AbstractWidget
         $this->buffer = $buffer;
     }
 
-    public function getBuffer(): EntryBuffer
+    public function getBuffer(): ?EntryBuffer
     {
         return $this->buffer;
     }

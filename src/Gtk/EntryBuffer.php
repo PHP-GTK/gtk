@@ -23,6 +23,6 @@ class EntryBuffer extends AbstractWidget
 
     public function __construct(?string $char = null)
     {
-        parent::__construct(new Widget(Gtk::getFFI()->gtk_entry_buffer_new($char, strlen($char))));
+        parent::__construct(new Widget(Gtk::getFFI()->gtk_entry_buffer_new($char, $char ? strlen($char) : 0)));
     }
 }

@@ -53,3 +53,4 @@ extern void gtk_window_unmaximize ( GtkWindow* window );
 extern void gtk_window_unfullscreen ( GtkWindow* window );
 extern void gtk_window_unminimize ( GtkWindow* window );
 extern void gtk_window_set_transient_for ( GtkWindow* window, GtkWindow* parent );
+extern GListModel* gtk_window_get_toplevels (void);

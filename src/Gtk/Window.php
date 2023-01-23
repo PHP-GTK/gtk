@@ -38,6 +38,7 @@ class Window extends AbstractWidget
         $height = Gtk::getFFI()->new("gint", false);
 
         Gtk::getFFI()->gtk_window_get_default_size(Gtk::getFFI()->cast($this->cast . ' *', $this->widget->widget), \FFI::addr($width), \FFI::addr($height));
+        /** @psalm-suppress UndefinedPropertyFetch*/
         return [
             'width' => $width->cdata,
             'height' => $height->cdata,
